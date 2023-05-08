@@ -5,9 +5,24 @@ import "fmt"
 func main() {
 	arr := []int{3, 5, 6, 8, 9, 4, 1, 5, 23, 66, 12, 90, 52}
 	fmt.Println(len(arr))
-	selection_sort(arr)
+	fmt.Println("======")
+	// selection_sort(arr)
 	// buble_sort(arr)
+	// insertion_sort(arr)
+	insertion_sort(arr)
 	fmt.Println(arr)
+}
+
+func insertion_sort(arr []int) {
+	for i := 0; i < len(arr); i++ {
+		temp := arr[i]
+		j := i - 1
+		for j >= 0 && arr[j] > temp {
+			arr[j+1] = arr[j]
+			j--
+		}
+		arr[j+1] = temp
+	}
 }
 
 func selection_sort(arr []int) {

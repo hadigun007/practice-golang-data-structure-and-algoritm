@@ -3,3 +3,4 @@
 ### Sorting Algorithm
 - selection sort
 - buble sort
+- insertion sort
