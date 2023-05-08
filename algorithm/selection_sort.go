@@ -1,15 +1,16 @@
 package algorithm
 
-func selection_sort(arr []int, n int) {
-	for i := 0; i < n-1; i++ {
-		iMin := i
-		for j := i + 1; j < n; j++ {
-			if arr[j] < arr[iMin] {
-				iMin = j
+func selection_sort(arr []int) {
+	for i := 0; i < len(arr)-1; i++ {
+		min := i
+		for j := i + 1; j < len(arr); j++ {
+			if arr[min] > arr[j] {
+				min = j
 			}
-			temp := arr[i]
-			arr[i] = arr[iMin]
-			arr[iMin] = temp
 		}
+		temp := arr[i]
+		arr[i] = arr[min]
+		arr[min] = temp
+
 	}
 }
